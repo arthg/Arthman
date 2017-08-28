@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  arthman:
+    image: arthman
+    build:
+      context: ./Arthman
+      dockerfile: Dockerfile
