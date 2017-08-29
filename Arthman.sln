@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arthman", "Arthman\Arthman.
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B5A0733B-8F3D-4B93-9ADD-412C15C21964}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arthman.Tests", "..\Arthman.Tests\Arthman.Tests.csproj", "{CDBC0543-B342-4A0C-B8B8-D4E9CCB5064C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B5A0733B-8F3D-4B93-9ADD-412C15C21964}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5A0733B-8F3D-4B93-9ADD-412C15C21964}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5A0733B-8F3D-4B93-9ADD-412C15C21964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDBC0543-B342-4A0C-B8B8-D4E9CCB5064C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDBC0543-B342-4A0C-B8B8-D4E9CCB5064C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDBC0543-B342-4A0C-B8B8-D4E9CCB5064C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDBC0543-B342-4A0C-B8B8-D4E9CCB5064C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
