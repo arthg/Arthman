@@ -9,6 +9,8 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arthman.Tests", "Arthman.Tests\Arthman.Tests.csproj", "{37329F66-C8D4-4E50-BF08-DD2EBEBCF165}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arthman.Tests.Integration", "Arthman.Tests.Integration\Arthman.Tests.Integration.csproj", "{7E7C5E33-6D10-43C4-893D-54B75A7CC1E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{37329F66-C8D4-4E50-BF08-DD2EBEBCF165}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37329F66-C8D4-4E50-BF08-DD2EBEBCF165}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37329F66-C8D4-4E50-BF08-DD2EBEBCF165}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E7C5E33-6D10-43C4-893D-54B75A7CC1E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E7C5E33-6D10-43C4-893D-54B75A7CC1E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E7C5E33-6D10-43C4-893D-54B75A7CC1E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E7C5E33-6D10-43C4-893D-54B75A7CC1E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

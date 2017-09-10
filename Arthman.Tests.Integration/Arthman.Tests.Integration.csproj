@@ -8,15 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Exceptionless.RandomData" Version="1.1.47" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170720-02" />
-    <PackageReference Include="Nancy.Testing" Version="2.0.0-clinteastwood" />
+    <PackageReference Include="MongoDB.Driver" Version="2.4.4" />
     <PackageReference Include="NUnit" Version="3.8.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.8.0" />
-    <PackageReference Include="SharpTestsEx" Version="2.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="helpers\" />
   </ItemGroup>
 
   <ItemGroup>

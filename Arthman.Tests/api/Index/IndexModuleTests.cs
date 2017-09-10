@@ -22,7 +22,7 @@ namespace Arthman.Tests.api.Index
         public sealed class IndexGetEndpoint : IndexModuleTests
         {
             [Test]
-            public async Task Should_return_statuc_code_ok_Async()
+            public async Task Should_return_status_code_ok_Async()
             {
                 //arrange
 
