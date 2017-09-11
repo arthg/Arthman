@@ -1,6 +1,9 @@
 ﻿using Arthman.MongoDb;
 using NUnit.Framework;
 using MongoDB.Driver;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
+using MongoDB.Bson;
 
 namespace Arthman.Tests.Integration.MongoDb
 {
@@ -21,6 +24,10 @@ namespace Arthman.Tests.Integration.MongoDb
             var randomConnectionString = "mongodb://" + mongoUri.Server;
 
             ArthmanContext = new ArthmanContext(randomConnectionString, _randomDatabaseName);
+
+            //TODO: determnie correct place for this bootstrapping
+            BsonSerializer.RegisterSerializer(typeof(decimal), new DecimalSerializer(BsonType.Decimal128));
+            BsonSerializer.RegisterSerializer(typeof(decimal?), new NullableSerializer<decimal>(new DecimalSerializer(BsonType.Decimal128)));
         }
 
         [OneTimeTearDown]
