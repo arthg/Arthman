@@ -1,8 +1,8 @@
 ﻿namespace Arthman.Models
 {
-    public sealed class Note
+    public sealed class WeightEntry
     {
         public string Id { get; set; }
-        public string Body { get; set; }
+        public decimal Weight { get; set; }
     }
 }
