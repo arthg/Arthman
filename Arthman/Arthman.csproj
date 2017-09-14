@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="api\Common\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
