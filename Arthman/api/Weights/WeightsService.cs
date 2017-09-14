@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using Arthman.MongoDb;
+using System.Threading.Tasks;
+using Arthman.Models;
 
 namespace Arthman.api.Weights
 {
@@ -9,11 +11,20 @@ namespace Arthman.api.Weights
 
     public class WeightsService : IWeightsService
     {
-        public async Task<string> AddWeightAsync(CreateWeightRequest createWeightRequest)
+        private IWeightsRepository _weightsRepository;
+
+        public WeightsService(IWeightsRepository weightsRepository)
         {
-            //TODO: create a weights repository and inject it and call the Create method
+            _weightsRepository = weightsRepository;
+        }
+          
+        public async Task<string> AddWeightAsync(CreateWeightRequest createWeightRequest)
+        {            
+            //TODO: CreateWeightRequest -> WeightEntry mapper
             //TODO: hit Event Store!!! <- this what we are after 
-            return string.Empty;                
+            //TODO: there should be a workflow with activities .. Create + NotifyEvent + ..
+            var newId = await _weightsRepository.CreateAsync(new WeightEntry { Weight = createWeightRequest.Weight });
+            return newId;                
         }
     }
 }

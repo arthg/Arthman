@@ -3,7 +3,7 @@ using Nancy.Testing;
 using NUnit.Framework;
 using SharpTestsEx;
 using System.Threading.Tasks;
-using Arthman.Tests.helpers;
+using Arthman.api.Index;
 
 namespace Arthman.Tests.api.Index
 {
@@ -15,8 +15,10 @@ namespace Arthman.Tests.api.Index
         [SetUp]
         public void PrepareTestBrowser()
         {
-            var defaultNancyBootstrapper = new DefaultNancyBootstrapper();
-            _browser = new Browser(defaultNancyBootstrapper);
+             _browser = new Browser(with =>
+            {
+                with.Module<IndexModule>();
+            });
         }
 
         public sealed class IndexGetEndpoint : IndexModuleTests
