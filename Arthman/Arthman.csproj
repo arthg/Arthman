@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
     <ApplicationIcon />
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <StartupObject />
   </PropertyGroup>
 

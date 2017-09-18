@@ -14,7 +14,7 @@ namespace Arthman.Tests.Integration.MongoDb
         [SetUp]
         public void PrepareWeightsRepositoryTests()
         {
-            _sut = new WeightsRepository(ArthmanContext.Database);            
+            _sut = new WeightsRepository(ArthmanContext);            
         }
 
         [Test]

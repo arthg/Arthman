@@ -16,9 +16,9 @@ namespace Arthman.MongoDb
         //TODO: should be a base repo ..
         private IMongoCollection<WeightEntry> _collection { get; set; }
 
-        public WeightsRepository(IMongoDatabase database)
+        public WeightsRepository(IMongoContext mongoContext)
         {
-            _collection = database.GetCollection<WeightEntry>("weights");
+            _collection = mongoContext.Database.GetCollection<WeightEntry>("weights");
         }
 
         public async Task<string> CreateAsync(WeightEntry weightEntry)
