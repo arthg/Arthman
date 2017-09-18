@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Serilog;
+using Serilog.Events;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using Nancy.Owin;
+using Arthman.Middleware;
 
 namespace Arthman
 {
@@ -20,16 +17,40 @@ namespace Arthman
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            loggerFactory.AddConsole();
+            var log = ConfigureLogger();
 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseOwin(x => x.UseNancy());
+            //            app.UseOwin(x => x.UseNancy());
+
+            app.UseOwin(buildFunc =>
+            {
+            /*
+            buildFunc(next => GlobalErrorLogging.Middleware(next, log));
+            buildFunc(next => CorrelationToken.Middleware(next));
+            buildFunc(next => RequestLogging.Middleware(next, log));
+            buildFunc(next => PerformanceLogging.Middleware(next, log));
+            buildFunc(next => new MonitoringMiddleware(next, HealthCheck).Invoke);
+            buildFunc.UseNancy(opt => opt.Bootstrapper = new Bootstrapper(log));
+            */
+                buildFunc(next => RequestLogging.Middleware(next, log));
+                buildFunc.UseNancy();
+            });
+        }
+
+        private ILogger ConfigureLogger()
+        {
+            return new LoggerConfiguration()
+              .Enrich.FromLogContext()
+              .WriteTo.ColoredConsole(
+                 LogEventLevel.Verbose,
+                 "{NewLine}{Timestamp:HH:mm:ss} [{Level}] ({CorrelationToken}) {Message}{NewLine}{Exception}")
+              .CreateLogger();
         }
     }
 }

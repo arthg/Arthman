@@ -11,6 +11,7 @@
   <ItemGroup>
     <Folder Include="api\Common\" />
     <Folder Include="EventStore\" />
+    <Folder Include="LibOwin\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -21,6 +22,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Owin" Version="2.0.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.4.4" />
     <PackageReference Include="Nancy" Version="2.0.0-clinteastwood" />
+    <PackageReference Include="Serilog" Version="2.5.0" />
+    <PackageReference Include="Serilog.Sinks.ColoredConsole" Version="3.0.1" />
   </ItemGroup>
 
 </Project>

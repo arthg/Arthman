@@ -25,7 +25,7 @@ namespace Arthman.Tests.Integration.MongoDb
 
             ArthmanContext = new ArthmanContext(randomConnectionString, _randomDatabaseName);
 
-            //TODO: determnie correct place for this bootstrapping
+            //TODO: determine correct place for this bootstrapping
             BsonSerializer.RegisterSerializer(typeof(decimal), new DecimalSerializer(BsonType.Decimal128));
             BsonSerializer.RegisterSerializer(typeof(decimal?), new NullableSerializer<decimal>(new DecimalSerializer(BsonType.Decimal128)));
         }

@@ -11,14 +11,14 @@ namespace Arthman.MongoDb
     {
         private readonly IMongoDatabase _database;
 
-        /*
+        
         public ArthmanContext(string connectionString, string databaseName)
         {
             //TODO: later from Env var
             var client = new MongoClient(connectionString);
             _database = client.GetDatabase(databaseName);
         }
-        */
+        
         public ArthmanContext()
         {
             var client = new MongoClient("mongodb://localhost/");
