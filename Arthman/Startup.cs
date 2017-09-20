@@ -30,14 +30,15 @@ namespace Arthman
 
             app.UseOwin(buildFunc =>
             {
-            /*
-            buildFunc(next => GlobalErrorLogging.Middleware(next, log));
-            buildFunc(next => CorrelationToken.Middleware(next));
-            buildFunc(next => RequestLogging.Middleware(next, log));
-            buildFunc(next => PerformanceLogging.Middleware(next, log));
-            buildFunc(next => new MonitoringMiddleware(next, HealthCheck).Invoke);
-            buildFunc.UseNancy(opt => opt.Bootstrapper = new Bootstrapper(log));
-            */
+                /*
+                buildFunc(next => GlobalErrorLogging.Middleware(next, log));
+                buildFunc(next => CorrelationToken.Middleware(next));
+                buildFunc(next => RequestLogging.Middleware(next, log));
+                buildFunc(next => PerformanceLogging.Middleware(next, log));
+                buildFunc(next => new MonitoringMiddleware(next, HealthCheck).Invoke);
+                buildFunc.UseNancy(opt => opt.Bootstrapper = new Bootstrapper(log));
+                */
+                buildFunc(next => CorrelationToken.Middleware(next));
                 buildFunc(next => RequestLogging.Middleware(next, log));
                 buildFunc.UseNancy();
             });

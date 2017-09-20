@@ -8,7 +8,7 @@ namespace Arthman.Middleware
 {
     using AppFunc = Func<IDictionary<string, object>, Task>;
 
-    public class RequestLogging
+    public static class RequestLogging
     {
         public static AppFunc Middleware(AppFunc next, ILogger log)
         {
